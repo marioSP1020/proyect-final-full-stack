@@ -1,0 +1,12 @@
+{
+  "name": "proyect-final-full-stack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:marioSP1020/proyect-final-full-stack.git",
+  "author": "marioSP1020 <mariosp1020@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "lerna": "^3.22.1"
+  }
+}
