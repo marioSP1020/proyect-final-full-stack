@@ -1,0 +1,10 @@
+[game-factories]{bgcolor:'white'}
+game_factory_id{label:"INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY"}
+
+
+[games]{bgcolor:'orange'}
+
+
+game_factories 1--* games
+
+
