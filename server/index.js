@@ -12,6 +12,7 @@ import jsonResponseMiddleware from './midlewares/json-response-middleware.js';
 
 //ROUTERS
 import healthRouter from './routes/health.js';
+import userRouter from './routes/user.js';
 
 const server = express();
 
@@ -24,6 +25,7 @@ server.use(cors());
 
 //ROUTES
 server.use(healthRouter);
+server.use(userRouter);
 
 
 server.listen(PORT, () => logger.info(`Server starting on port ${PORT} 📡`));
