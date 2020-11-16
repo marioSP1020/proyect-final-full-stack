@@ -14,15 +14,15 @@ export const listPhotos = async (request, response) => {
   }
 };
 
-// export const createGame = async (request, response) => {
-//   const { headers } = request;
+export const createPhoto = async (request, response) => {
+  const { headers } = request;
 
-//   console.log({ headers });
+  console.log({ headers });
 
-//   return response.send({
-//     message: 'game create',
-//   });
-// };
+  return response.send({
+    message: 'Photo create',
+  });
+};
 
 
 
