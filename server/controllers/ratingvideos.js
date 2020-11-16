@@ -1,11 +1,11 @@
-import { getPhotosBy } from '../models/photo.js';
+import { getRatingVideosBy } from '../models/ratingvideos.js';
 
-export const listPhotos = async (request, response) => {
+export const listRatingVideos = async (request, response) => {
   const { query } = request;
 
   try {
-    const photos = await getPhotosBy(query);
-    return response.status(200).send(photos);
+    const ratingVideos = await getRatingVideosBy(query);
+    return response.status(200).send(ratingVideos);
   } catch (error) {
     const { message } = error;
     return response.status(500).send({

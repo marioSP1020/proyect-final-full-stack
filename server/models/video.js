@@ -1,15 +1,15 @@
-import Photos from '../db/queries/photo.js';
+import Videos from '../db/queries/video.js';
 
 const haveQuery = (object) => {
   return Object.entries(object).length > 0;
 };
 
-export const getPhotosBy = async (query) => {
+export const getVideosBy = async (query) => {
   console.log(haveQuery(query));
 
   try {
-    const photos = await Photos.getAll();
-    return photos;
+    const videos = await Videos.getAll();
+    return videos;
   } catch (error) {
     throw new Error(error);
   }
