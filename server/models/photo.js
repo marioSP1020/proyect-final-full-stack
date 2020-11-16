@@ -1,10 +1,10 @@
-import Photos from '../db/queries/game.js';
+import Photos from '../db/queries/photo.js';
 
 const haveQuery = (object) => {
   return Object.entries(object).length > 0;
 };
 
-export const getGamesBy = async (query) => {
+export const getPhotosBy = async (query) => {
   console.log(haveQuery(query));
 
   try {
