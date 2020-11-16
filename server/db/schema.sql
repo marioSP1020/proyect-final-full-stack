@@ -4,14 +4,12 @@ DROP TABLE IF EXISTS videos CASCADE;
 DROP TABLE IF EXISTS ratingphotos CASCADE;
 DROP TABLE IF EXISTS ratingvideos CASCADE;
 
-
 CREATE TABLE users(
   user_id SERIAL PRIMARY KEY,
   email TEXT NOT NULL UNIQUE,
   pass_salt TEXT NOT NULL,
   pass_hash TEXT NOT NULL
 );
-
 
 CREATE TABLE photos(
   photos_id INT PRIMARY KEY,
@@ -33,20 +31,25 @@ CREATE TABLE videos(
   width INT
 );
 
-
 CREATE TABLE ratingphotos(
   ratingphotos_id SERIAL PRIMARY KEY,
-  user_id INT REFERENCES users(user_id),
-  photos_id INT REFERENCES photos(photos_id),
-  rating_value INT  
+  user_id INT NOT NULL,
+  photos_id INT NOT NULL,
+  rating_value INT,
+  FOREIGN KEY (user_id) REFERENCES users(user_id),
+  FOREIGN KEY (photos_id) REFERENCES photos(photos_id) 
 );
 
 CREATE TABLE ratingvideos(
   ratingvideos_id SERIAL PRIMARY KEY,
-  user_id INT REFERENCES users(user_id),
-  photos_id INT REFERENCES photos(photos_id),
-  rating_value INT  
+  user_id INT NOT NULL,
+  videos_id INT NOT NULL,
+  rating_value INT,
+  FOREIGN KEY (user_id) REFERENCES users(user_id),
+  FOREIGN KEY (videos_id) REFERENCES videos(videos_id)   
 );
+
+--  FOREIGN KEY(artist) REFERENCES artists(id)
 
 
 
