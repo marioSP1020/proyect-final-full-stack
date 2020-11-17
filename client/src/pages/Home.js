@@ -11,9 +11,7 @@ const Home = () => {
   //const [searchString, setSearchString] = useState('');
 
 
-
-  const history = useHistory()
-  
+  const history = useHistory()  
 
 
   const fetchAllphotos = async (tipoFoto) => {
@@ -38,7 +36,6 @@ const Home = () => {
     
   };
 
-
   useEffect(() => {
     fetchAllphotos('people');
     fetchAllvideos('tigers');
@@ -59,16 +56,14 @@ const Home = () => {
     <main >
       
       <form onSubmit={handleSubmit}>
-            <label className="cambio" htmlFor="search"> Search songs</label>
+            <label className="cambio" htmlFor="search"> Search Photos</label>
         <input className="recambio" type="search"
           id="search"
-          placeholder="artist to search"
+          placeholder="photo to search"
           value={searchString}
           onChange={handleChange} />
          <button>submit</button>
       </form> 
-      
-      
       
     </main>
   );
