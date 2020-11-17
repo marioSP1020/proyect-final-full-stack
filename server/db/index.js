@@ -1,10 +1,18 @@
 import pg from 'pg';
 import logger from '../lib/logger.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const { DATABASE_URL } = process.env;
+
+const databaseUrl =
+  DATABASE_URL || 'postgresql://mario:msp1020@localhost:5432/dbstore';
 
 const { Pool } = pg;
 
 const pool = new Pool({
-  connectionString: 'postgresql://mario:msp1020@localhost:5432/dbstore',
+  connectionString: databaseUrl,
 });
 
 export const query = async ({ tag = '', queryString, params }) => {
@@ -17,7 +25,7 @@ export const query = async ({ tag = '', queryString, params }) => {
   } catch (error) {
     const { message } = error;
     logger.error({ database: { error: { Message } } });
-    throw new Error(error);    
+    throw new Error(error);
   }
 };
 

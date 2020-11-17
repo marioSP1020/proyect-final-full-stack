@@ -8,5 +8,12 @@
   "private": true,
   "dependencies": {
     "lerna": "^3.22.1"
+  },
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "start": "yarn workspace server start"
   }
 }
