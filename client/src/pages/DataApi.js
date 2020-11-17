@@ -10,11 +10,7 @@ const Home = () => {
   const [videos, setVideos] = useState([]);
   //const [searchString, setSearchString] = useState('');
 
-
-
   const history = useHistory()
-  
-
 
   const fetchAllphotos = async (tipoFoto) => {
     try {
